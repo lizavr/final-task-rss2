@@ -2,6 +2,10 @@
 This is an eCommerce Application developed by *Totally Spies Team* - the team of threes that are in love with Javascript.  
 Application is developed during the *FE/Javascript* course in the *Rolling Scopes School*.
 
+## Demo
+
+[Demo](https://drive.google.com/file/d/1dtI6N3ASrNqjqXArgt-f-HvQJtPPoaH4/view?usp=sharing)
+
 ## Purpose
 - improve skills in Javascript / Typescript
 - improve skills in additional technologies - Webpack, ESLint, Git, etc.
