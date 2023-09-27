@@ -1,0 +1,139 @@
+@import './styles/abstract/variables';
+@import './styles/components/inputs';
+@import './styles/components/buttons';
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+/* Stylize scrollbar */
+::-webkit-scrollbar {
+  width: $scrollbar-width-total;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border: solid $scrollbar-width transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $main-color;
+  background-clip: padding-box;
+  border-radius: $scrollbar-width;
+  border: solid $scrollbar-width transparent;
+}
+
+body {
+  margin: 0;
+  font-family: 'PT Sans', sans-serif;
+  color: $text-color;
+
+  .overlay {
+    display: none;
+  }
+
+  &.frozen {
+    overflow: hidden;
+  }
+
+  &.show-overlay {
+    .overlay {
+      display: block;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: $overlay-color;
+      z-index: $overlay-z-index;
+    }
+  }
+}
+
+.width-content {
+  max-width: 1200px;
+}
+
+a {
+  color: $main-color;
+  text-decoration: none;
+  transition: 0.3s;
+  cursor: pointer;
+
+  @media (hover: hover) {
+    &:hover {
+      color: darken($main-color, 20);
+    }
+  }
+}
+
+.horizontalText {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  color: darken($gray-color, 20);
+  font-size: 14px;
+  z-index: 1;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    width: 50%;
+    top: 51%;
+    overflow: hidden;
+    height: 1px;
+    background-color: $gray-color;
+    content: '\a0';
+    position: absolute;
+  }
+
+  &::before {
+    margin-left: -52%;
+    text-align: right;
+  }
+
+  &::after {
+    margin-left: 2%;
+  }
+}
+
+.edit-link {
+  @include editLink();
+}
+
+.remove-link {
+  @include removeLink();
+}
+
+.change-password-link {
+  @include changePasswordLink();
+}
+
+.info-block {
+  $color: $gray-color-2;
+  $iconPath: './assets/icons/info.png';
+
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  color: $color;
+  text-decoration: none;
+  cursor: pointer;
+
+  &::before {
+    display: inline-block;
+    content: '';
+    min-width: 1em;
+    min-height: 1em;
+    background-color: $color;
+    -webkit-mask: url($iconPath) no-repeat center / contain;
+    mask: url($iconPath) no-repeat center / contain;
+  }
+}
+
+.swal-overlay {
+  background-color: $overlay-color;
+}
+
+.swal-modal {
+  font-family: inherit;
+  font-size: inherit;
+}

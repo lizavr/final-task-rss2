@@ -1,0 +1,22 @@
+.form-element {
+  width: 300px;
+
+  input {
+    width: 100%;
+  }
+
+  select {
+    width: 100%;
+  }
+}
+
+.error-msg {
+  font-size: 0.95em;
+  opacity: 0.6;
+
+  .error-msg_item {
+    display: list-item;
+    margin-left: 1.3em;
+    list-style-type: circle;
+  }
+}

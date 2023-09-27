@@ -1,0 +1,155 @@
+@import './../../../../styles/abstract/variables';
+@import './../../../../styles/abstract/mixins';
+
+$input-padding-top: 0.4em;
+$input-padding-right: 0.5em;
+$top-padding: calc($input-padding-top + 1px);
+$right-padding: calc($input-padding-right + 1px);
+
+.form_account-address {
+  --default-address-color: #{$main-color};
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  padding: 10px;
+  border: 1px solid $gray-color;
+  border-radius: 5px;
+  background-color: $white-color-1;
+  min-width: 45%;
+  box-sizing: border-box;
+
+  .col-1 {
+    width: 90px;
+    font-size: 0.9em;
+    padding: $top-padding 0;
+    color: $gray-color-3;
+  }
+
+  .col-2 {
+    width: 250px;
+  }
+
+  .form-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .form-row {
+    display: flex;
+    justify-content: center;
+  }
+
+  .info-element {
+    display: inline-block;
+    padding: $top-padding $right-padding;
+
+    &:empty::before {
+      content: '-';
+      font-style: italic;
+    }
+  }
+
+  .edit-btn,
+  .remove-btn {
+    $padding: calc($btn-padding-top - 1px);
+    padding: $padding 0;
+  }
+
+  .form-row .form-element,
+  .submit-btn,
+  .reset-btn {
+    display: none;
+  }
+
+  input:not([type='button'], [type='submit'], [type='reset']),
+  select {
+    padding: $input-padding-top $input-padding-right;
+  }
+
+  .form-row_defaults {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+  }
+
+  .default-address_label,
+  .default-address_button {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+
+  .default-address_label {
+    $color: var(--default-address-color);
+    color: $color;
+
+    &::before {
+      @include fakeRadio($size: 0.65em, $color: $color);
+    }
+
+    &.checked::before {
+      @include fakeRadio('checked', $size: 0.65em, $color: $color);
+    }
+  }
+
+  .default-address_button {
+    $color: var(--default-address-color);
+    color: $color;
+
+    &::before {
+      @include fakeRadio($size: 0.65em, $color: $color);
+    }
+
+    &.checked::before {
+      @include fakeRadio('checked', $size: 0.65em, $color: $color);
+    }
+  }
+
+  &.edit-mode {
+    --default-address-color: #{$gray-color-2};
+
+    .form-row .form-element,
+    .submit-btn,
+    .reset-btn {
+      display: initial;
+    }
+
+    .edit-btn,
+    .remove-btn,
+    .info-element {
+      display: none;
+    }
+
+    .default-address_button,
+    .default-address_label {
+      pointer-events: none;
+    }
+  }
+}
+
+@media screen and (max-width: 439px) {
+  .form_account-address {
+    .form-row {
+      flex-direction: column;
+      gap: 0px;
+    }
+
+    .col-1 {
+      padding: 0 $right-padding;
+
+      label::after {
+        content: ':';
+      }
+    }
+
+    .form-buttons {
+      justify-content: center;
+    }
+
+    h4 {
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,182 @@
+.about-us_page {
+  padding: 80px 10px;
+  flex: 1 1 auto;
+  background-color: rgba(70, 163, 88, 0.1);
+}
+
+.about-us_content {
+  margin: 0 auto;
+}
+
+.team_content {
+  padding-bottom: 80px;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  border-bottom: 1px solid rgba(173, 201, 178, 0.5);
+}
+
+.about-us_img-wrap {
+  position: relative;
+  max-width: 350px;
+}
+
+.person_content_wrapper {
+  padding: 50px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.team-img {
+  background-image: url('../../../assets/images/t-s6.jpg');
+}
+
+.person-1_img {
+  background-image: url('../../../assets/images/Alla.jpg');
+}
+
+.person-2_img {
+  background-image: url('../../../assets/images/Liza.jpg');
+}
+
+.person-3_img {
+  background-image: url('../../../assets/images/Zhenja.jpg');
+}
+
+.about-us_img {
+  width: 330px;
+  height: 265px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 10px solid #fff;
+  border-bottom: 60px solid #fff;
+  -webkit-box-shadow: 3px 3px 3px #777;
+  -moz-box-shadow: 3px 3px 3px #777;
+  box-shadow: 3px 3px 3px #777;
+}
+
+.about-us_text {
+  position: absolute;
+  text-align: center;
+  letter-spacing: 1px;
+  width: 100%;
+  bottom: 18px;
+  font: 400 20px cursive;
+  color: black;
+}
+
+.about-us_description-wrap {
+  max-width: 350px;
+  letter-spacing: 1px;
+  font: 400 20px cursive;
+  color: black;
+}
+
+.person-content {
+  padding-bottom: 50px;
+  display: flex;
+  gap: 50px;
+  letter-spacing: 1px;
+  font: 400 20px cursive;
+  color: black;
+  border-bottom: 1px solid rgba(173, 201, 178, 0.5);
+}
+
+.personal-data {
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.personal_description-wrapper {
+  display: flex;
+  gap: 10px;
+
+  a {
+    color: black !important;
+
+    &:hover {
+      color: #46a358 !important;
+    }
+  }
+}
+
+.personal_description-title {
+  color: #46a358;
+}
+
+.cooperation-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  letter-spacing: 1px;
+  font: 400 20px cursive;
+  color: black;
+}
+
+.school-logo {
+  margin-top: 50px;
+  background-image: url('../../../assets/images/logo-rss.png');
+  width: 200px;
+  height: 75px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+
+  &:hover {
+    filter: drop-shadow(2px 4px 6px rgb(70, 163, 88));
+  }
+}
+
+@media (max-width: 800px) {
+  .team_content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .person-content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .about-us_page {
+    padding: 40px 10px 60px;
+  }
+  .about-us_description-wrap {
+    font-size: 18px;
+  }
+  .team_content {
+    padding-bottom: 60px;
+    gap: 20px;
+    padding-bottom: 40px;
+  }
+
+  .person-content {
+    font-size: 18px;
+    gap: 20px;
+  }
+
+  .about-us_img {
+    width: 300px;
+    height: 240px;
+  }
+
+  .cooperation-wrapper {
+    font-size: 18px;
+  }
+
+  .person_content_wrapper {
+    padding: 35px 0px;
+    gap: 35px;
+  }
+}
+
+@media (max-width: 350px) {
+  .about-us_img {
+    width: 280px;
+    height: 220px;
+  }
+}

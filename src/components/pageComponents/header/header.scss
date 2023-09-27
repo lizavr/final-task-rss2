@@ -1,0 +1,247 @@
+@import '../../../styles/abstract/variables';
+@import '../../../styles/abstract/mixins';
+
+.header {
+  border-bottom: 1px solid rgba(173 201 178 / 50%);
+}
+
+.header-content {
+  margin: 0 auto;
+  padding: 10px calc(10px + ($scrollbar-width-total - (100vw - 100%))) 0px 0px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-text {
+  color: $main-color;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.navigation-wrapper {
+  height: 100%;
+  display: flex;
+  gap: 30px;
+  margin: auto;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    height: calc(100% - 3px);
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s;
+
+    @media (hover: hover) {
+      &:hover {
+        border-color: $main-color;
+        font-weight: bold;
+      }
+    }
+
+    &.active-element {
+      border-color: $main-color;
+      font-weight: bold;
+    }
+  }
+}
+
+.control-acc_wrap {
+  $color: $main-color;
+  height: 100%;
+  display: flex;
+  gap: 15px;
+
+  .control-acc_btn {
+    display: flex;
+    align-items: center;
+    color: $color;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s;
+    transition: text-shadow 0.1s ease;
+    gap: 5px;
+
+    &:active,
+    &.active-element {
+      // Simulate bold text to prevent shifting on hover.
+      // https://stackoverflow.com/questions/556153/inline-elements-shifting-when-made-bold-on-hover
+      text-shadow: 1px 0.2px 0.1px $color;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        // The same.
+        text-shadow: 1px 0.2px 0.1px $color;
+      }
+    }
+  }
+}
+
+.login_btn::before,
+.profile_btn::before {
+  @include profileIcon('user');
+}
+
+.registration_btn::before {
+  @include profileIcon('login');
+}
+
+.logout_btn::before {
+  @include profileIcon('logout');
+}
+
+.cart_btn::before {
+  @include profileIcon('cart');
+}
+
+.logo-wrapper {
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.logo-img {
+  width: 50px;
+  height: 50px;
+  background-image: url('../../../assets/icons/plant.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.menu-block {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.main-cart {
+  display: none;
+  position: relative;
+}
+
+.burger-icon {
+  display: none;
+  width: 40px;
+  height: 40px;
+  background: url('./../../../assets/icons/burger-menu.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.menu-items {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.main-cart::before {
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+
+.item-count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #46a358;
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  top: 0px;
+  right: -10px;
+  color: #ffffff;
+  text-align: center;
+  padding: 3px;
+  font-weight: 700;
+}
+
+.empty-cart {
+  display: none;
+}
+
+/* Burger menu styles */
+@media only screen and (max-width: 767px) {
+  .menu-block {
+    position: fixed;
+    right: 0;
+    top: 0;
+    background: white;
+    width: 320px;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 100px;
+    font-size: 1.1em;
+    z-index: $menu-block-z-index;
+    transition: all 0.5s;
+    transform: translateX(100%);
+
+    &.open {
+      transform: translateX(0%);
+    }
+  }
+  .item-count {
+    top: -15px;
+  }
+
+  .navigation-wrapper,
+  .control-acc_wrap {
+    flex-direction: column;
+    height: auto;
+    margin: 0 auto;
+    padding: 20px 0;
+    gap: 15px;
+    align-items: center;
+    width: 80%;
+  }
+
+  .navigation-wrapper {
+    a {
+      padding-bottom: 10px;
+      font-size: inherit;
+    }
+  }
+
+  .control-acc_wrap {
+    border-top: 1px solid $gray-color;
+  }
+
+  .main-cart {
+    display: block;
+  }
+
+  .burger-icon {
+    display: block;
+    z-index: $burger-icon-z-index;
+    transition: all 0.3s;
+
+    &.open {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+@media (max-width: 560px) {
+  .header-content {
+    .logo-wrapper {
+      gap: 0px;
+    }
+
+    & .logo-text {
+      font-size: 0px;
+    }
+  }
+}

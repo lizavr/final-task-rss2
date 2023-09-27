@@ -1,0 +1,158 @@
+@import './../../../styles/abstract/variables';
+
+.swiper {
+  width: 500px;
+  height: 500px;
+  margin: 0px !important;
+  border: 1px solid rgba(173, 201, 178, 0.5);
+}
+
+.product_img {
+  border: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  cursor: pointer;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: lightgray !important;
+  transition: 0.2s;
+}
+
+.swiper-button-prev:hover {
+  color: #46a358 !important;
+}
+
+.swiper-button-next:hover {
+  color: #46a358 !important;
+}
+
+.swiper.swiper-modal {
+  visibility: hidden;
+  height: 0;
+  border: 0;
+
+  &.slider_modal-window {
+    visibility: visible;
+    height: auto;
+  }
+}
+
+.modal-window {
+  position: fixed;
+  z-index: $modal-window-z-index;
+  top: 0px;
+  right: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: $overlay-color;
+}
+
+.slider_modal-window {
+  max-width: 50% !important;
+  width: 100% !important;
+  height: 75% !important;
+  position: fixed !important;
+  z-index: calc($modal-window-z-index + 1) !important;
+  top: 0;
+  border: none;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.close-window_btn {
+  background-color: transparent;
+  padding: 20px 0px;
+  line-height: 0;
+  font-family: cursive;
+  font-size: 40px;
+  border-radius: 0px;
+  position: absolute;
+}
+
+.close-window_btn:hover {
+  background-color: transparent;
+  color: #46a358;
+}
+
+// responsive
+
+@media (max-width: 1300px) {
+  .slider_modal-window {
+    max-width: 60% !important;
+  }
+}
+
+@media (max-width: 1100px) {
+  .slider_modal-window {
+    max-width: 70% !important;
+  }
+}
+
+@media (max-width: 1000px) {
+  .slider_modal-window {
+    max-width: 80% !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .slider_modal-window {
+    max-width: 90% !important;
+  }
+}
+
+@media (max-width: 800px) {
+  .slider_modal-window {
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .swiper {
+    width: 450px;
+    height: 450px;
+  }
+}
+
+@media (max-width: 530px) {
+  .swiper {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 500px) {
+  .swiper {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 380px) {
+  .swiper {
+    width: 260px;
+    height: 260px;
+  }
+}
+
+@media (max-width: 620px) {
+  .slider_modal-window {
+    height: 60% !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .slider_modal-window {
+    height: 50% !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .slider_modal-window {
+    height: 40% !important;
+  }
+}

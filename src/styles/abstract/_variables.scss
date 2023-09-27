@@ -1,0 +1,32 @@
+$main-color: #46a358;
+$gray-color: #eaeaea;
+$text-color: #3d3d3d;
+$gray-color-2: #727272;
+$gray-color-3: #a3a3a3;
+$gray-color-4: #f6f6f6;
+$white-color: #ffffff;
+$white-color-1: #fafafa;
+$placeholder-color: #747373;
+$border-hover-color: #a3a3a3;
+$background-active: #f9f9f9;
+$scrollbar-width: 4px;
+$scrollbar-width-total: $scrollbar-width * 3;
+$content-width: 1200px;
+$discount-color: #e5b30c;
+$in-cart-color: #cdb627;
+$in-cart-hover-color: #b6a121;
+$hover-color: #89949c33;
+$main-background-color: #ffffff;
+$background-catalog-color: #fbfbfb;
+$overlay-color: rgba(41, 41, 41, 0.848);
+$lightgreen-color: rgba(70, 163, 88, 0.1);
+$lightgreen-color-2: rgba(70, 163, 88, 0.07);
+$button-color: $main-color;
+
+$btn-padding-top: 10px;
+$btn-padding-right: 20px;
+
+$overlay-z-index: 999;
+$menu-block-z-index: $overlay-z-index + 1;
+$burger-icon-z-index: $menu-block-z-index + 1;
+$modal-window-z-index: $burger-icon-z-index + 20;

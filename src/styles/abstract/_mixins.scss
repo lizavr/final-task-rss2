@@ -1,0 +1,101 @@
+@import './variables';
+
+@mixin button($type: default) {
+  border-radius: 5px;
+  padding: $btn-padding-top $btn-padding-right;
+  color: inherit;
+  border: 1px solid $gray-color;
+  text-decoration: none;
+  font-size: 0.9em;
+  background: none;
+  text-align: center;
+  cursor: pointer;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: $gray-color;
+    }
+  }
+
+  @if ($type == default) {
+    font-weight: 700;
+    background-color: $button-color;
+    color: white;
+    border-color: transparent;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: darken($button-color, 10);
+        color: white;
+      }
+    }
+  }
+
+  &.button-large {
+    padding: 1rem;
+    font-size: 0.9em;
+  }
+}
+
+@mixin profileIcon($type) {
+  content: '';
+  background-image: url('../../../assets/icons/#{$type}.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 22px;
+  height: 22px;
+  opacity: 0.75;
+}
+
+@mixin linkWithIcon($iconPath, $color: $main-color) {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  color: $color;
+  text-decoration: none;
+  cursor: pointer;
+
+  &::before {
+    display: inline-block;
+    content: '';
+    width: 1em;
+    height: 1em;
+    background-color: $color;
+    -webkit-mask: url($iconPath) no-repeat center / contain;
+    mask: url($iconPath) no-repeat center / contain;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: $color;
+      font-weight: bold;
+    }
+  }
+}
+
+@mixin editLink() {
+  @include linkWithIcon('./assets/icons/pen.png');
+}
+
+@mixin removeLink() {
+  @include linkWithIcon('./assets/icons/remove.png');
+}
+
+@mixin changePasswordLink() {
+  @include linkWithIcon('./assets/icons/padlock.png');
+}
+
+@mixin fakeRadio($type: 'default', $size: 1em, $color: $main-color) {
+  display: inline-block;
+  content: '';
+  width: $size;
+  height: $size;
+  border: 2px solid $color;
+  border-radius: 50%;
+  box-sizing: border-box;
+
+  @if ($type == 'checked') {
+    border: none;
+    background-color: $color;
+  }
+}

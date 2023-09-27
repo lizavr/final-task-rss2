@@ -1,0 +1,145 @@
+@import './../../../styles/abstract/variables';
+@import './../../../styles/abstract/mixins';
+
+.profile_page {
+  flex: 1 1 auto;
+  display: flex;
+  max-width: $content-width;
+  width: calc(100vw - $scrollbar-width-total);
+  margin: 40px auto;
+  justify-content: space-between;
+  box-sizing: border-box;
+
+  .nav-bar {
+    min-width: 200px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    color: $gray-color-2;
+  }
+
+  .content {
+    width: 100%;
+    flex: 1 1 auto;
+  }
+
+  .profile-tab {
+    $icon-size: 18px;
+    display: flex;
+    gap: 10px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border-left: 5px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &::before {
+      display: inline-block;
+      content: '';
+      width: $icon-size;
+      height: $icon-size;
+      background-color: $gray-color-2;
+    }
+
+    &.account-details-tab::before {
+      -webkit-mask: url('./../../../assets/icons/user-1.png') no-repeat center / contain;
+      mask: url('./../../../assets/icons/user-1.png') no-repeat center / contain;
+    }
+
+    &.addresses-tab::before {
+      -webkit-mask: url('./../../../assets/icons/pin.png') no-repeat center / contain;
+      mask: url('./../../../assets/icons/pin.png') no-repeat center / contain;
+    }
+
+    &:hover {
+      color: $main-color;
+
+      &::before {
+        background-color: $main-color;
+      }
+    }
+  }
+
+  .profile-tab_input {
+    display: none;
+  }
+
+  .profile-tab_content {
+    display: none;
+  }
+
+  @for $i from 0 through 1 {
+    #profile-tab_input-#{$i}:checked ~ .content #profile-tab_content-#{$i} {
+      display: block;
+    }
+
+    #profile-tab_input-#{$i}:checked ~ .nav-bar #profile-tab-#{$i} {
+      color: $main-color;
+      font-weight: bold;
+      border-left-color: $main-color;
+
+      &::before {
+        background-color: $main-color;
+      }
+    }
+  }
+
+  .account-details-content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .addresses-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 1239px) {
+  .profile_page {
+    padding: 0 1.5vw;
+  }
+}
+
+@media screen and (max-width: 1009px) {
+  .profile_page {
+    flex-direction: column;
+    gap: 30px;
+
+    .nav-bar {
+      width: 100%;
+      flex-direction: row;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .content {
+      width: fit-content;
+      margin: auto;
+    }
+
+    .addresses-content {
+      justify-content: center;
+    }
+
+    .profile-tab {
+      border-left: 0;
+      border-bottom: 5px solid transparent;
+      padding: 10px 10px;
+    }
+
+    @for $i from 0 through 1 {
+      #profile-tab_input-#{$i}:checked ~ .nav-bar #profile-tab-#{$i} {
+        border-bottom-color: $main-color;
+
+        &::before {
+          background-color: $main-color;
+        }
+      }
+    }
+  }
+}

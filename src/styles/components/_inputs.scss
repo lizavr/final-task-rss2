@@ -1,0 +1,91 @@
+@import '../abstract/variables';
+@import '../abstract/mixins';
+
+$color-outline: $gray-color;
+$color-focus: $main-color;
+$color-invalid: #f03800;
+
+input:not([type='submit'], [type='button'], [type='reset']) {
+  padding: 12px 14px;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+  box-sizing: border-box;
+  border: solid 1px $color-outline;
+  transition: all 0.3s ease;
+  background-color: white;
+
+  &:invalid,
+  &.invalid {
+    border: solid 1px $color-invalid;
+  }
+}
+
+input[type='button'],
+input[type='submit'],
+button {
+  @include button();
+}
+
+input[type='reset'] {
+  @include button('transparent');
+}
+
+select {
+  appearance: none;
+  background-color: transparent;
+  padding: 12px 14px;
+  font-family: inherit;
+  font-size: inherit;
+  border: solid 1px $color-outline;
+  background: url(./assets/icons/arrow-down.svg) no-repeat right 0.8em center / 1.4em;
+  outline: none;
+  border-radius: 5px;
+  color: $placeholder-color;
+  background-color: white;
+
+  & * {
+    color: $text-color;
+  }
+
+  &:focus {
+    border: solid 1px $color-focus;
+  }
+
+  &:invalid {
+    border: solid 1px $color-invalid;
+  }
+
+  &:has(option:checked:not([value])),
+  &:has(option:checked:not([value=''])) {
+    color: black;
+  }
+}
+
+select,
+input:not([type='submit'], [type='button'], [type='reset']) {
+  @media (hover: hover) {
+    &:hover {
+      border: solid 1px $border-hover-color;
+      transition: all 0.3s ease;
+    }
+  }
+
+  &:active {
+    background-color: $background-active;
+  }
+
+  &:focus {
+    border: solid 1px $color-focus;
+  }
+}
+
+.checkbox-element,
+.label-element-checkbox {
+  cursor: pointer;
+}
+
+.checkbox-element {
+  margin-right: 8px;
+}

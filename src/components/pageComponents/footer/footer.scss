@@ -1,0 +1,164 @@
+.info-container_footer {
+  background-color: #fbfbfb;
+}
+
+.info-wrapper_footer {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+}
+
+.first-block_img {
+  background-image: url('../../../assets/images/flower-1.png');
+  width: 80px;
+  height: 80px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.second-block_img {
+  background-image: url('../../../assets/images/flower-2.png');
+  width: 80px;
+  height: 80px;
+  background-repeat: no-repeat;
+  background-size: 90%;
+}
+
+.third-block_img {
+  background-image: url('../../../assets/images/flower-3.png');
+  width: 80px;
+  height: 80px;
+  background-repeat: no-repeat;
+  background-size: 80%;
+}
+
+h4 {
+  margin: 0;
+}
+
+.block-text {
+  margin: 0;
+  color: #727272;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.block-wrapper {
+  max-width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.link-container_footer {
+  background-color: rgba(70, 163, 88, 0.1);
+}
+
+.link-wrapper_footer {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+}
+
+.git-hub_wrapper {
+  max-width: 220px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.git-hub-img {
+  background-image: url('../../../assets/icons/github.png');
+  width: 50px;
+  height: 45px;
+  background-size: 90%;
+  background-repeat: no-repeat;
+}
+
+.links-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.rs-link {
+  max-width: 220px;
+  width: 100%;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.link-wrapper_footer .logo-wrapper {
+  max-width: 220px;
+  width: 100%;
+}
+
+@media (max-width: 780px) {
+  .block-wrapper {
+    max-width: 180px;
+  }
+
+  .rs-link {
+    max-width: 180px;
+  }
+}
+
+@media (max-width: 680px) {
+  .block-wrapper {
+    max-width: 140px;
+  }
+
+  .rs-link {
+    max-width: 140px;
+  }
+}
+
+@media (max-width: 560px) {
+  .info-wrapper_footer {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .block-wrapper {
+    max-width: 220px;
+    align-items: center;
+  }
+
+  .block-text {
+    text-align: center;
+  }
+
+  .link-wrapper_footer {
+    padding: 40px;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .rs-link {
+    max-width: 220px;
+    text-align: center;
+  }
+
+  .logo-footer {
+    order: 1;
+  }
+
+  .logo-footer,
+  .git-hub_wrapper {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .rs-link {
+    font-size: 18px;
+  }
+}

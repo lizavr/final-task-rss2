@@ -1,0 +1,97 @@
+@import './../../../styles/abstract/variables';
+@import './../../../styles/abstract/mixins';
+
+.promo-block {
+  max-width: $content-width;
+  padding: 10px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  .all-discounts-block {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 25px;
+  }
+
+  .discount {
+    position: relative;
+    max-width: 95vw;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: end;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    justify-content: space-between;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $lightgreen-color-2;
+      -webkit-mask: url('./../../../assets/images/texture.png') repeat center / contain;
+      mask: url('./../../../assets/images/texture.png') repeat center / contain;
+      border-radius: 15px;
+      z-index: -1;
+    }
+  }
+
+  .discount-name {
+    font-weight: 600;
+    color: $gray-color-2;
+  }
+
+  .discount-code {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: $main-color;
+  }
+
+  .discount-description {
+    font-size: 14px;
+    color: $gray-color-2;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: end;
+    flex: 1;
+    justify-content: space-between;
+  }
+
+  .no-discount-code {
+    font-size: 14px;
+    color: $gray-color-2;
+  }
+
+  .find-more {
+    display: flex;
+    gap: 5px;
+    width: max-content;
+    @include button();
+
+    &::after {
+      display: block;
+      content: '';
+      width: 18px;
+      height: 18px;
+      background-color: white;
+      -webkit-mask: url('./../../../assets/icons/right-arrow.png') repeat center / contain;
+      mask: url('./../../../assets/icons/right-arrow.png') repeat center / contain;
+    }
+  }
+}
+
+@media screen and (max-width: 989px) {
+  .promo-block {
+    .all-discounts-block {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      margin: auto;
+    }
+  }
+}

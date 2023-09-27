@@ -1,0 +1,274 @@
+@import './../../../styles/abstract/variables';
+
+.cart_page {
+  width: 100%;
+  margin: 30px auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+  gap: 30px;
+  box-sizing: border-box;
+
+  .cart_content {
+    display: flex;
+    gap: 40px;
+  }
+
+  .cart-totals {
+    width: 330px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex: 0.5;
+    max-width: 350px;
+
+    h3 {
+      height: 40px;
+      margin: 0;
+      padding: 10px 0;
+      border-bottom: 0.3px solid $lightgreen-color;
+      box-sizing: border-box;
+    }
+
+    .coupon-apply {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-bottom: 15px;
+
+      label {
+        font-size: 0.9em;
+      }
+    }
+
+    .subtotal,
+    .total,
+    .discount-sum {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .subtotal {
+      .amount {
+        font-size: 1.1em;
+      }
+    }
+
+    .total {
+      margin-top: 10px;
+
+      .label {
+        font-weight: 700;
+      }
+
+      .amount {
+        font-weight: 700;
+        color: $main-color;
+        font-size: 1.1em;
+      }
+    }
+  }
+
+  .coupon-input-wrapper {
+    display: flex;
+
+    input {
+      flex: 1;
+      border-radius: 3px 0 0 3px;
+    }
+
+    button {
+      border-radius: 0px 3px 3px 0px;
+    }
+  }
+
+  .products-list {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 4fr 1.5fr 2fr 1.5fr 0.5fr;
+    row-gap: 10px;
+    height: fit-content;
+
+    .table_head,
+    .table_body,
+    .table_row {
+      display: contents;
+    }
+
+    .product-img {
+      width: 70px;
+      height: 70px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .product-data,
+    .table_row > div {
+      display: flex;
+      align-items: center;
+    }
+
+    .product-name a {
+      color: inherit;
+      font-weight: bold;
+    }
+
+    .total-price {
+      display: none;
+
+      .total s {
+        opacity: 0.5;
+      }
+    }
+
+    .one-piece {
+      color: $gray-color-3;
+    }
+
+    .total-price .total,
+    .total-amount {
+      font-weight: 700;
+      color: $main-color;
+    }
+
+    .table_head {
+      font-weight: 600;
+
+      & > div {
+        height: 40px;
+        padding: 10px 10px;
+        background-color: $lightgreen-color;
+        box-sizing: border-box;
+      }
+    }
+
+    .table_row {
+      > div {
+        padding: 0 10px;
+        align-self: center;
+      }
+
+      .price,
+      .total-amount {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        s {
+          opacity: 0.5;
+        }
+      }
+    }
+
+    .product-quantity {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+
+      .quantity {
+        font-size: 1.1em;
+      }
+
+      .plus-btn,
+      .minus-btn {
+        padding: 2px 6px;
+        border-radius: 45%;
+        font-size: 20px;
+      }
+    }
+
+    .remove-link-wrapper {
+      justify-self: end;
+    }
+  }
+
+  .cart_content_empty {
+    a {
+      font-weight: 600;
+    }
+  }
+
+  .cart_content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .clear-cart-btn {
+    width: max-content;
+  }
+}
+
+@media screen and (max-width: 979px) {
+  .cart_page {
+    .cart_content {
+      flex-direction: column;
+    }
+  }
+}
+
+@media screen and (max-width: 669px) {
+  .cart_page {
+    .products-list {
+      grid-template-columns: 3fr 1fr 0.5fr;
+      row-gap: 10px;
+      height: fit-content;
+      column-gap: 10px;
+
+      .table_head > div {
+        display: none;
+      }
+
+      .table_row {
+        & > div {
+          padding: 0px;
+        }
+
+        .total-price {
+          display: flex;
+          flex-direction: column-reverse;
+        }
+
+        .price,
+        .total-amount {
+          display: none;
+        }
+      }
+
+      .product-quantity {
+        gap: 8px;
+
+        .plus-btn,
+        .minus-btn {
+          width: 26px;
+          height: 26px;
+          padding: 2px 6px;
+          border-radius: 45%;
+          font-size: 20px;
+          box-sizing: border-box;
+          background-color: $lightgreen-color;
+          color: $text-color;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 419px) {
+  .cart_page {
+    .products-list {
+      column-gap: 5px;
+
+      .product-img {
+        width: 15vw;
+        height: 15vw;
+      }
+    }
+
+    .cart-totals {
+      width: 100%;
+    }
+  }
+}

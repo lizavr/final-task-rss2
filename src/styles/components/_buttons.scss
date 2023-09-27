@@ -1,0 +1,9 @@
+@import '../abstract/mixins';
+
+.button {
+  @include button();
+}
+
+.button_transparent {
+  @include button(transparent);
+}

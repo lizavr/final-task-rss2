@@ -1,0 +1,28 @@
+@import '../../../styles/abstract/variables';
+
+.login_page {
+  flex: 1 1 auto;
+}
+
+.login-content {
+  width: 300px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+
+  & .login-content_item {
+    width: 100%;
+  }
+
+  .page-header {
+    color: $main-color;
+    text-align: center;
+  }
+
+  .register-link-wrapper {
+    display: flex;
+    gap: 5px;
+  }
+}

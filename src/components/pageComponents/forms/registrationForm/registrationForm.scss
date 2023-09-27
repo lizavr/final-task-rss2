@@ -1,0 +1,83 @@
+$form-element-padding: 0.75em;
+
+:root {
+  --row-gap: 15px;
+  --column-gap: 15px;
+}
+
+.address-form-element {
+  display: flex;
+  flex-direction: column;
+  gap: var(--row-gap);
+
+  &.shipping_address,
+  &.billing_address {
+    padding-left: $form-element-padding;
+    padding-right: $form-element-padding;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  &.shipping_address {
+    padding-top: 2.5em;
+  }
+
+  &.billing_address {
+    height: max-content;
+  }
+}
+
+.form_registration {
+  display: flex;
+  flex-direction: column;
+  gap: var(--row-gap);
+  width: max-content;
+  margin: auto;
+
+  .form_row {
+    display: flex;
+    gap: var(--column-gap);
+    width: 100%;
+    margin: auto;
+    box-sizing: border-box;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+
+    &:not(.form_row_addresses) {
+      padding: 0 $form-element-padding;
+    }
+  }
+
+  .div-checkbox-element {
+    min-width: 300px;
+  }
+
+  .form-submit {
+    width: 300px;
+    margin: 20px auto;
+  }
+}
+
+@media screen and (max-width: 679px) {
+  .form_registration {
+    margin: auto;
+
+    .form_row {
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+
+      &:not(.form_row_addresses) {
+        padding: 0;
+      }
+    }
+
+    .shipping_address,
+    .billing_address {
+      padding-left: 2.4vw;
+      padding-right: 2.4vw;
+    }
+  }
+}

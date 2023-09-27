@@ -1,0 +1,38 @@
+@import './../../../../styles/abstract/variables.scss';
+
+div.noUi-connect {
+  background: $main-color;
+}
+
+div.noUi-horizontal {
+  height: 13px;
+}
+
+div.noUi-horizontal .noUi-handle {
+  height: 20px;
+  width: 25px;
+}
+
+div.noUi-handle:before,
+div.noUi-handle:after {
+  content: '';
+  height: 7px;
+}
+
+div.noUi-handle:before {
+  left: 10px;
+}
+
+div.noUi-handle:after {
+  left: 14px;
+}
+div.noUi-target.noUi-ltr.noUi-horizontal.noUi-txt-dir-ltr {
+  width: 75%;
+  margin-bottom: 1vh;
+}
+
+.label-from,
+.label-to {
+  display: block;
+  margin: 1vh 0;
+}

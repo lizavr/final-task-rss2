@@ -1,0 +1,111 @@
+@import './../../../../styles/abstract/variables';
+
+$input-padding-top: 0.4em;
+$input-padding-right: 0.5em;
+$top-padding: calc($input-padding-top + 1px);
+$right-padding: calc($input-padding-right + 1px);
+
+.form_blank-address {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  padding: 10px;
+  border: 1px solid $gray-color;
+  border-radius: 5px;
+  background-color: $white-color-1;
+  align-items: center;
+  justify-content: center;
+  min-width: 45%;
+  width: 362px;
+  min-height: 290px;
+  box-sizing: border-box;
+
+  .col-1 {
+    width: 90px;
+    font-size: 0.9em;
+    padding: $top-padding 0;
+    color: $gray-color-3;
+  }
+
+  .col-2 {
+    width: 250px;
+  }
+
+  .form-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .form-row {
+    display: flex;
+  }
+
+  .add-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    transform: translate3d(-25%, -25%, 0);
+
+    &::after {
+      display: inline-block;
+      content: '';
+      width: 50%;
+      height: 50%;
+      background-color: $gray-color-2;
+      -webkit-mask: url('../../../../assets/icons/plus.png') no-repeat center / contain;
+      mask: url('../../../../assets/icons/plus.png') no-repeat center / contain;
+    }
+  }
+
+  .form-row .form-element,
+  .form-row .col-1,
+  .submit-btn,
+  .reset-btn {
+    display: none;
+  }
+
+  &.edit-mode {
+    .form-row .form-element,
+    .form-row .col-1,
+    .submit-btn,
+    .reset-btn {
+      display: initial;
+    }
+
+    .add-btn {
+      display: none;
+    }
+  }
+
+  input:not([type='button'], [type='submit'], [type='reset']),
+  select {
+    padding: $input-padding-top $input-padding-right;
+  }
+}
+
+@media screen and (max-width: 439px) {
+  .form_blank-address {
+    width: 272px;
+
+    .form-row {
+      flex-direction: column;
+      gap: 0px;
+    }
+
+    .col-1 {
+      padding: 0 $right-padding;
+
+      label::after {
+        content: ':';
+      }
+    }
+
+    .form-buttons {
+      justify-content: center;
+    }
+  }
+}

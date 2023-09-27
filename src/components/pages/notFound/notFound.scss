@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap');
+
+.not-found_page {
+  flex: 1 1 auto;
+}
+
+.not-found_content {
+  margin: 0 auto;
+  padding: 100px 10px;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.info-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.info-title {
+  margin: 0;
+  color: green;
+  font-size: 122px;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 700;
+}
+
+.info-subtitle_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info-subtitle {
+  margin: 0;
+  font-size: 46px;
+  font-weight: 300;
+}
+
+.info-text {
+  max-width: 360px;
+  margin: 0;
+  color: #46a358;
+  font-size: 21px;
+}
+
+.image-404 {
+  background-image: url('../../../assets/images/girl.png');
+  width: 500px;
+  height: 500px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+@media (max-width: 950px) {
+  .info-title {
+    font-size: 100px;
+  }
+
+  .info-wrapper {
+    gap: 20px;
+  }
+
+  .info-subtitle {
+    font-size: 40px;
+  }
+
+  .image-404 {
+    width: 400px;
+    height: 400px;
+  }
+
+  .info-text {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 850px) {
+  .info-subtitle {
+    font-size: 30px;
+  }
+
+  .image-404 {
+    width: 320px;
+    height: 320px;
+    background-size: 100%;
+  }
+
+  .info-text {
+    max-width: 300px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 670px) {
+  .image-404 {
+    width: 250px;
+    height: 230px;
+    background-size: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .not-found_content {
+    padding: 20px 10px 60px;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .info-title,
+  .info-subtitle_wrapper,
+  .info-text {
+    text-align: center;
+  }
+}

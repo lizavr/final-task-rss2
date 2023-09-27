@@ -1,0 +1,29 @@
+@import '../../../styles/abstract/variables';
+
+.registration_page {
+  flex: 1 1 auto;
+}
+
+.registration-content {
+  max-width: max-content;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+
+  & .registration-content_item {
+    width: 100%;
+  }
+
+  .page-header {
+    color: $main-color;
+    text-align: center;
+  }
+
+  .login-link-wrapper {
+    display: flex;
+    gap: 5px;
+    padding: 0 0.75em;
+  }
+}
